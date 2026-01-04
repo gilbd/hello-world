@@ -118,6 +118,9 @@ dependencies {
     // Security
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
+    // QR Code generation for Tuya pairing
+    implementation("com.google.zxing:core:3.5.2")
+
     // Firebase for notifications (optional, can be configured later)
     // implementation("com.google.firebase:firebase-messaging-ktx:23.4.0")
 

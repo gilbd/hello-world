@@ -8,6 +8,10 @@ import com.babymonitor.detection.AudioAnalyzer
 import com.babymonitor.detection.MotionDetector
 import com.babymonitor.streaming.SignalingClient
 import com.babymonitor.streaming.StreamingManager
+import com.babymonitor.tuya.TuyaConfig
+import com.babymonitor.tuya.TuyaDeviceManager
+import com.babymonitor.tuya.TuyaMqttClient
+import com.babymonitor.tuya.TuyaP2PServer
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -57,4 +61,32 @@ object AppModule {
     fun provideSettingsRepository(
         @ApplicationContext context: Context
     ): SettingsRepository = SettingsRepository(context)
+
+    // Tuya IoT Integration
+    @Provides
+    @Singleton
+    fun provideTuyaConfig(
+        @ApplicationContext context: Context
+    ): TuyaConfig = TuyaConfig(context)
+
+    @Provides
+    @Singleton
+    fun provideTuyaMqttClient(
+        tuyaConfig: TuyaConfig
+    ): TuyaMqttClient = TuyaMqttClient(tuyaConfig)
+
+    @Provides
+    @Singleton
+    fun provideTuyaP2PServer(
+        tuyaConfig: TuyaConfig
+    ): TuyaP2PServer = TuyaP2PServer(tuyaConfig)
+
+    @Provides
+    @Singleton
+    fun provideTuyaDeviceManager(
+        @ApplicationContext context: Context,
+        tuyaConfig: TuyaConfig,
+        tuyaMqttClient: TuyaMqttClient,
+        tuyaP2PServer: TuyaP2PServer
+    ): TuyaDeviceManager = TuyaDeviceManager(context, tuyaConfig, tuyaMqttClient, tuyaP2PServer)
 }
