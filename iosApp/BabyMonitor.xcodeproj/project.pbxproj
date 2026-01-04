@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A1234560001 /* BabyMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550001 /* BabyMonitorApp.swift */; };
+		2A1234560002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550002 /* ContentView.swift */; };
+		2A1234560003 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550003 /* HomeView.swift */; };
+		2A1234560004 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550004 /* CameraView.swift */; };
+		2A1234560005 /* ViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550005 /* ViewerView.swift */; };
+		2A1234560006 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550006 /* SettingsView.swift */; };
+		2A1234560007 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550007 /* CameraManager.swift */; };
+		2A1234560008 /* AudioAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550008 /* AudioAnalyzer.swift */; };
+		2A1234560009 /* WebRTCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1234550009 /* WebRTCManager.swift */; };
+		2A1234560010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1234550010 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A1234540001 /* BabyMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1234550001 /* BabyMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyMonitorApp.swift; sourceTree = "<group>"; };
+		2A1234550002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A1234550003 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2A1234550004 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		2A1234550005 /* ViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerView.swift; sourceTree = "<group>"; };
+		2A1234550006 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2A1234550007 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		2A1234550008 /* AudioAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalyzer.swift; sourceTree = "<group>"; };
+		2A1234550009 /* WebRTCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTCManager.swift; sourceTree = "<group>"; };
+		2A1234550010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A1234550011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2A1234530001 = {
+			isa = PBXGroup;
+			children = (
+				2A1234530002 /* BabyMonitor */,
+				2A1234530003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A1234530002 /* BabyMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				2A1234550001 /* BabyMonitorApp.swift */,
+				2A1234550002 /* ContentView.swift */,
+				2A1234530004 /* Views */,
+				2A1234530005 /* Camera */,
+				2A1234530006 /* Streaming */,
+				2A1234550010 /* Assets.xcassets */,
+				2A1234550011 /* Info.plist */,
+			);
+			path = BabyMonitor;
+			sourceTree = "<group>";
+		};
+		2A1234530003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A1234540001 /* BabyMonitor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A1234530004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A1234550003 /* HomeView.swift */,
+				2A1234550004 /* CameraView.swift */,
+				2A1234550005 /* ViewerView.swift */,
+				2A1234550006 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A1234530005 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				2A1234550007 /* CameraManager.swift */,
+				2A1234550008 /* AudioAnalyzer.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		2A1234530006 /* Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				2A1234550009 /* WebRTCManager.swift */,
+			);
+			path = Streaming;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A1234520001 /* BabyMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A1234510001 /* Build configuration list for PBXNativeTarget "BabyMonitor" */;
+			buildPhases = (
+				2A1234520002 /* Sources */,
+				2A1234520003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BabyMonitor;
+			productName = BabyMonitor;
+			productReference = 2A1234540001 /* BabyMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A1234500001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					2A1234520001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 2A1234510002 /* Build configuration list for PBXProject "BabyMonitor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A1234530001;
+			productRefGroup = 2A1234530003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A1234520001 /* BabyMonitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A1234520002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1234560001 /* BabyMonitorApp.swift in Sources */,
+				2A1234560002 /* ContentView.swift in Sources */,
+				2A1234560003 /* HomeView.swift in Sources */,
+				2A1234560004 /* CameraView.swift in Sources */,
+				2A1234560005 /* ViewerView.swift in Sources */,
+				2A1234560006 /* SettingsView.swift in Sources */,
+				2A1234560007 /* CameraManager.swift in Sources */,
+				2A1234560008 /* AudioAnalyzer.swift in Sources */,
+				2A1234560009 /* WebRTCManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A1234520003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1234560010 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2A1234510003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A1234510004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A1234510005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BabyMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Baby Monitor";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed to monitor your baby";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is needed to detect baby crying";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babymonitor.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A1234510006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BabyMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Baby Monitor";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed to monitor your baby";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is needed to detect baby crying";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babymonitor.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A1234510001 /* Build configuration list for PBXNativeTarget "BabyMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A1234510005 /* Debug */,
+				2A1234510006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A1234510002 /* Build configuration list for PBXProject "BabyMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A1234510003 /* Debug */,
+				2A1234510004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A1234500001 /* Project object */;
+}

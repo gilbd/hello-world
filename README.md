@@ -1,18 +1,25 @@
 # Baby Monitor
 
-A secure Android app that turns your old phone into a smart baby monitor with real-time video streaming, cry detection, and motion alerts.
+A cross-platform app (Android & iOS) that turns your old phone into a smart baby monitor with real-time video streaming, cry detection, and motion alerts.
+
+## Platforms
+
+| Platform | Status | Min Version |
+|----------|--------|-------------|
+| Android  | ✅ Ready | Android 7.0 (API 24) |
+| iOS      | ✅ Ready | iOS 15.0+ |
 
 ## Features
 
-- **Camera Mode**: Transform any Android phone into a baby camera
+- **Camera Mode**: Transform any phone into a baby camera
   - Real-time video streaming via WebRTC
-  - Night vision support (uses phone's flash)
+  - Night vision support (uses phone's flash/torch)
   - Motion detection with configurable sensitivity
   - Baby cry detection using audio analysis
   - Secure peer-to-peer connection
 
 - **Viewer Mode**: Watch the stream on another device
-  - Enter room code to connect securely
+  - Enter 6-character room code to connect securely
   - Real-time alerts for crying or movement
   - Audio mute control
   - Connection status indicator
@@ -28,51 +35,66 @@ A secure Android app that turns your old phone into a smart baby monitor with re
   - Vibration alerts
   - Persistent monitoring notification
 
-## Architecture
+## Project Structure
 
 ```
-com.babymonitor/
-├── camera/           # CameraX integration
-├── detection/        # Motion & cry detection algorithms
-├── streaming/        # WebRTC streaming & signaling
-├── notification/     # Alert notifications
-├── service/          # Foreground monitoring service
-├── data/             # Settings persistence
-├── di/               # Hilt dependency injection
-└── ui/               # Compose UI screens
-    ├── screens/
-    │   ├── home/     # Mode selection
-    │   ├── camera/   # Camera streaming
-    │   ├── viewer/   # Stream viewer
-    │   └── settings/ # App configuration
-    ├── navigation/   # Navigation setup
-    └── theme/        # Material 3 theming
+BabyMonitor/
+├── app/                    # Android app (Kotlin + Jetpack Compose)
+├── iosApp/                 # iOS app (Swift + SwiftUI)
+├── shared/                 # Kotlin Multiplatform shared code
+│   └── src/
+│       ├── commonMain/     # Cross-platform code
+│       │   └── kotlin/
+│       │       ├── detection/    # Motion & cry detection engines
+│       │       ├── streaming/    # Signaling & room codes
+│       │       └── settings/     # Settings models
+│       ├── androidMain/    # Android-specific implementations
+│       └── iosMain/        # iOS-specific implementations
+└── docs/                   # Documentation
+    ├── PUBLISHING.md       # App Store & Play Store guide
+    └── SIDELOADING.md      # Direct installation guide
 ```
 
-## Requirements
+## Quick Start
 
-- Android 7.0 (API 24) or higher
-- Camera permission
-- Microphone permission
-- Internet access for streaming
+### Android
 
-## Setup
+```bash
+# Clone and build
+git clone <repo-url>
+cd BabyMonitor
 
-1. Clone the repository
-2. Open in Android Studio
-3. Sync Gradle dependencies
-4. Build and run on your device
+# Build debug APK
+./gradlew assembleDebug
+
+# Install on connected device
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+### iOS
+
+1. Open `iosApp/BabyMonitor.xcodeproj` in Xcode
+2. Select your team in Signing & Capabilities
+3. Connect iPhone and click Run (⌘R)
+
+## Installation Options
+
+| Method | Android | iOS |
+|--------|---------|-----|
+| **App Store** | [Publishing Guide](docs/PUBLISHING.md) | [Publishing Guide](docs/PUBLISHING.md) |
+| **Direct Install** | [Sideloading Guide](docs/SIDELOADING.md) | [Sideloading Guide](docs/SIDELOADING.md) |
+
+### Quickest Options
+
+- **Android**: Build APK, transfer to phone, install (free, permanent)
+- **iOS**: Connect to Mac with Xcode, build & run (free, 7-day expiry)
 
 ## Signaling Server
 
-For peer-to-peer connection, you'll need a signaling server. Options:
+For peer-to-peer connection, you'll need a signaling server:
 
-1. **Local Development**: Run a simple WebSocket server
-2. **Firebase Realtime Database**: Use as a signaling backend
-3. **Custom Server**: Deploy your own WebSocket server
-
-Example signaling server (Node.js):
 ```javascript
+// server.js - Simple Node.js signaling server
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
 
@@ -82,13 +104,10 @@ wss.on('connection', (ws, req) => {
   const url = new URL(req.url, 'http://localhost');
   const room = url.searchParams.get('room');
 
-  if (!rooms.has(room)) {
-    rooms.set(room, new Set());
-  }
+  if (!rooms.has(room)) rooms.set(room, new Set());
   rooms.get(room).add(ws);
 
   ws.on('message', (message) => {
-    // Broadcast to other peers in the room
     rooms.get(room).forEach((client) => {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
         client.send(message);
@@ -96,30 +115,65 @@ wss.on('connection', (ws, req) => {
     });
   });
 
-  ws.on('close', () => {
-    rooms.get(room)?.delete(ws);
-  });
+  ws.on('close', () => rooms.get(room)?.delete(ws));
 });
+
+console.log('Signaling server running on ws://localhost:8080');
 ```
 
-## Future Phases
+Run with: `node server.js`
 
-- [ ] Multi-camera support (connect multiple phones)
-- [ ] Recording & playback
-- [ ] Two-way audio (talk to baby)
-- [ ] Temperature/humidity sensor integration
-- [ ] Cloud streaming option
-- [ ] iOS companion app
+Alternatives:
+- Firebase Realtime Database
+- PubNub / Ably
+- Your own WebSocket server
 
 ## Tech Stack
 
-- **Language**: Kotlin
+### Shared (Kotlin Multiplatform)
+- Detection algorithms (motion, cry)
+- Signaling message parsing
+- Room code generation
+- Settings models
+
+### Android
 - **UI**: Jetpack Compose + Material 3
 - **Camera**: CameraX
-- **Streaming**: WebRTC
+- **Streaming**: WebRTC (stream-webrtc-android)
 - **DI**: Hilt
 - **Async**: Coroutines + Flow
 - **Storage**: DataStore
+
+### iOS
+- **UI**: SwiftUI
+- **Camera**: AVFoundation
+- **Audio**: AVAudioEngine + Accelerate
+- **Streaming**: WebRTC (to be integrated)
+
+## Roadmap
+
+- [x] Android app with all features
+- [x] iOS app with SwiftUI
+- [x] Kotlin Multiplatform shared code
+- [x] Installation documentation
+- [ ] Multi-camera dashboard (multiple streams)
+- [ ] Recording & playback
+- [ ] Two-way audio (talk to baby)
+- [ ] Cloud streaming option
+
+## Requirements
+
+### Android
+- Android 7.0 (API 24) or higher
+- Camera permission
+- Microphone permission
+- Internet access
+
+### iOS
+- iOS 15.0 or higher
+- Camera permission
+- Microphone permission
+- Internet access
 
 ## License
 

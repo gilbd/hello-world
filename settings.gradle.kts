@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "BabyMonitor"
 include(":app")
+include(":shared")

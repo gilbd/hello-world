@@ -321,3 +321,28 @@ proguard/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# iOS / Xcode
+iosApp/BabyMonitor.xcodeproj/project.xcworkspace/
+iosApp/BabyMonitor.xcodeproj/xcuserdata/
+iosApp/DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# CocoaPods
+iosApp/Pods/
+iosApp/Podfile.lock
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# Kotlin Multiplatform
+shared/build/
+*.framework
