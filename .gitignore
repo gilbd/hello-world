@@ -286,3 +286,38 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# Android Studio / IntelliJ IDEA
+*.iml
+.gradle/
+local.properties
+
+# Android Build outputs
+build/
+app/build/
+*.apk
+*.aab
+*.ap_
+
+# Android Generated files
+*.dex
+*.class
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Local configuration
+local.properties
+*.keystore
+*.jks
+keystore.properties
+
+# Proguard
+proguard/
+
+# OS generated files
+.DS_Store
+Thumbs.db
