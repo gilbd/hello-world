@@ -1,0 +1,21 @@
+{ "fps": 60, "bpm": 96, "key": "C", "seed": 11, "cues": [
+  {"kind":"pop","variant":"tiny","frame":24},
+  {"kind":"whoosh","variant":"soft","frame":117},
+  {"kind":"swish","variant":"in","frame":481},
+  {"kind":"tick","variant":"ui","frame":567},
+  {"kind":"chime","variant":"sparkle","frame":705},
+  {"kind":"pop","variant":"pop","frame":713},
+  {"kind":"press","variant":"confirm","frame":861},
+  {"kind":"chime","variant":"bell","frame":975},
+  {"kind":"chime","variant":"bell","frame":993},
+  {"kind":"pop","variant":"pop","frame":1003},
+  {"kind":"press","variant":"thock","frame":1191},
+  {"kind":"pop","variant":"tiny","frame":1218},
+  {"kind":"pop","variant":"tiny","frame":1245},
+  {"kind":"pop","variant":"cork","frame":1396},
+  {"kind":"pop","variant":"cork","frame":1426},
+  {"kind":"pop","variant":"cork","frame":1456},
+  {"kind":"pop","variant":"pop","frame":1495},
+  {"kind":"impact","variant":"bloom","frame":1624},
+  {"kind":"press","variant":"soft","frame":1723}
+]}

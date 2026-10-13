@@ -1,0 +1,6 @@
+node_modules/
+out/
+review/
+unlost-master.mp4
+audio/*.wav
+!audio/mix.wav
